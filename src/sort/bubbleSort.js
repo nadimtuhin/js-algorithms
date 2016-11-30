@@ -1,12 +1,12 @@
 function bubbleSort(collection) {
-    let unsorted = collection.length;
-    let result = collection.slice();
+    const result = collection.slice();
+    let lastUnsortedIndex = collection.length - 1;
 
-    for (; unsorted > 1; unsorted--) {
-        for (let ii = 0; ii < unsorted; ii++) {
+    for (; lastUnsortedIndex >= 1; lastUnsortedIndex--) {
+        for (let ii = 0; ii <= lastUnsortedIndex; ii++) {
             if (result[ii] > result[ii + 1]) {
-                let small = result[ii + 1];
-                let large = result[ii];
+                const small = result[ii + 1];
+                const large = result[ii];
 
                 result[ii] = small;
                 result[ii + 1] = large;
