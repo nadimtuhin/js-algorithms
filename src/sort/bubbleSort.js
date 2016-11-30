@@ -1,9 +1,9 @@
 function bubbleSort(collection) {
-    let jj = collection.length;
+    let unsorted = collection.length;
     let result = collection.slice();
 
-    for (; jj > 1; jj--) {
-        for (let ii = 0; ii < jj; ii++) {
+    for (; unsorted > 1; unsorted--) {
+        for (let ii = 0; ii < unsorted; ii++) {
             if (result[ii] > result[ii + 1]) {
                 let small = result[ii + 1];
                 let large = result[ii];
