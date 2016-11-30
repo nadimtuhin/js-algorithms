@@ -1,22 +1,21 @@
 function selectionSort(collection) {
-    let jj = collection.length;
-    let result = collection.slice();
+    const total = collection.length;
+    const result = collection.slice();
 
-    for (let ii = 0; ii < jj; ii++) {
-        let lowest = ii;
+    for (let indexToSort = 0; indexToSort < total; indexToSort++) {
+        let lowestIndex = indexToSort;
 
-        for (let kk = lowest; kk < jj; kk++) {
-            if (result[lowest] > result[kk + 1]) {
-                lowest = kk + 1;
+        for (let ii = lowestIndex + 1; ii < total; ii++) {
+            if (result[lowestIndex] > result[ii]) {
+                lowestIndex = ii;
             }
         }
 
-        let small = result[lowest];
-        let large = result[ii];
+        const small = result[lowestIndex];
+        const large = result[indexToSort];
 
-        result[ii] = small;
-        result[lowest] = large;
-
+        result[indexToSort] = small;
+        result[lowestIndex] = large;
     }
 
     return result;
