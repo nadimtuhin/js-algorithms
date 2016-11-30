@@ -1,0 +1,33 @@
+{
+  "name": "js-algorithms",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": {
+    "url": "git@github.com:nadimtuhin/js-algorithms.git",
+    "type": "git"
+  },
+  "scripts": {
+    "test": "node scripts/test.js",
+    "precommit": "./scripts/eslint.sh",
+    "lint": "./node_modules/.bin/eslint src/"
+  },
+  "author": "Nadim Tuhin <nadimtuhin@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "eslint": "^3.11.1",
+    "husky": "^0.11.9",
+    "jest": "^17.0.3"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js"
+    ],
+    "setupFiles": [
+      "<rootDir>/config/polyfills.js"
+    ],
+    "testPathIgnorePatterns": [
+      "<rootDir>/(build|docs|node_modules)/"
+    ],
+    "testEnvironment": "node"
+  }
+}
