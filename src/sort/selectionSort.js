@@ -5,7 +5,7 @@ function selectionSort(collection) {
     for (let indexToSort = 0; indexToSort < total; indexToSort++) {
         let lowestIndex = indexToSort;
 
-        for (let ii = lowestIndex + 1; ii < total; ii++) {
+        for (let ii = indexToSort + 1; ii < total; ii++) {
             if (result[lowestIndex] > result[ii]) {
                 lowestIndex = ii;
             }
