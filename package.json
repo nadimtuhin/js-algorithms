@@ -22,9 +22,6 @@
     "moduleFileExtensions": [
       "js"
     ],
-    "setupFiles": [
-      "<rootDir>/config/polyfills.js"
-    ],
     "testPathIgnorePatterns": [
       "<rootDir>/(build|docs|node_modules)/"
     ],
