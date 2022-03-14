@@ -14,8 +14,8 @@
   "author": "Nadim Tuhin <nadimtuhin@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "eslint": "^3.11.1",
-    "husky": "^0.11.9",
+    "eslint": "^8.11.0",
+    "husky": "^7.0.4",
     "jest": "^17.0.3"
   },
   "jest": {
