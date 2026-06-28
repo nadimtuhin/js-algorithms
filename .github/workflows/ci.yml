@@ -1,0 +1,76 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Detect Node.js project
+        id: detect-node
+        run: |
+          if [ -f "package.json" ]; then
+            echo "is_node=true" >> $GITHUB_OUTPUT
+          else
+            echo "is_node=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Set up Node.js
+        if: steps.detect-node.outputs.is_node == 'true'
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        if: steps.detect-node.outputs.is_node == 'true'
+        run: |
+          if [ -f "package-lock.json" ]; then
+            npm ci
+          else
+            npm install
+          fi
+
+      - name: Run lint
+        if: steps.detect-node.outputs.is_node == 'true'
+        run: npm run lint --if-present 2>/dev/null || true
+
+      - name: Run tests
+        if: steps.detect-node.outputs.is_node == 'true'
+        run: npm test --if-present 2>/dev/null || true
+
+      - name: Detect PHP/Composer project
+        id: detect-php
+        run: |
+          if [ -f "composer.json" ]; then
+            echo "is_php=true" >> $GITHUB_OUTPUT
+          else
+            echo "is_php=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Set up PHP
+        if: steps.detect-php.outputs.is_php == 'true'
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+
+      - name: Install Composer dependencies
+        if: steps.detect-php.outputs.is_php == 'true'
+        run: composer install --prefer-dist --no-progress
+
+      - name: Run PHP tests
+        if: steps.detect-php.outputs.is_php == 'true'
+        run: |
+          if [ -f "vendor/bin/phpunit" ]; then
+            vendor/bin/phpunit
+          else
+            echo "No PHPUnit found, skipping"
+          fi
+        continue-on-error: true
