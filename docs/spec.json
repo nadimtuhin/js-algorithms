@@ -1,0 +1,2 @@
+{ "banners": { "h-start": "GET STARTED", "h-add": "ADD YOUR OWN", "h-dev": "FOR DEVELOPERS" },
+  "hero": { "kicker": "JAVASCRIPT · LEARNING", "title": "js-algorithms", "tagline": "Classic sorting algorithms, each with Jest tests" } }

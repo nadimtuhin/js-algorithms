@@ -1,6 +1,56 @@
+<div align="center">
+
 # js-algorithms
 
-JavaScript implementations of classic sorting algorithms, each with a corresponding Jest test suite. Intended as a learning and reference set, not a production library.
+![js-algorithms, classic sorting algorithms in JavaScript with Jest tests](https://raw.githubusercontent.com/nadimtuhin/js-algorithms/master/docs/images/hero.svg)
+
+**Read the algorithm. Run the test.** Small files, one idea each.
+
+`JavaScript` [`MIT`](LICENSE) `Node 14+`
+
+</div>
+
+<br>
+
+A learning and reference set of classic sorting algorithms, each with a Jest test suite. Not a production library.
+
+<br>
+
+![Get started](https://raw.githubusercontent.com/nadimtuhin/js-algorithms/master/docs/images/h-start.svg)
+
+**1. Get the code and install:**
+
+```bash
+git clone https://github.com/nadimtuhin/js-algorithms.git
+cd js-algorithms
+yarn install
+```
+
+**2. Run the tests once:**
+
+```bash
+CI=true yarn test
+```
+
+You'll see 3 suites pass and `mergeSort.spec.js` fail. Merge sort is a stub left for you to write (see [What it is](#what-it-is)).
+
+Plain `yarn test` stays open in watch mode and reruns when you save a file. Open `src/sort/bubbleSort.js` and read it next to `bubbleSort.spec.js`.
+
+<br>
+
+![Add your own](https://raw.githubusercontent.com/nadimtuhin/js-algorithms/master/docs/images/h-add.svg)
+
+**One file, one test file.** The runner picks up any `*.spec.js`. The steps and an example are under [Adding an algorithm](#adding-an-algorithm).
+
+<br>
+
+![For developers](https://raw.githubusercontent.com/nadimtuhin/js-algorithms/master/docs/images/h-dev.svg)
+
+Everything below is reference. You don't need it to get started.
+
+[What it is](#what-it-is) · [Requirements](#requirements) · [Usage](#usage) · [Adding an algorithm](#adding-an-algorithm) · [Layout](#directory-layout) · [CI](#ci) · [Contributing](#contributing)
+
+JavaScript implementations of classic sorting algorithms, each with a corresponding Jest test suite.
 
 ## What it is
 
