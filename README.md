@@ -32,7 +32,7 @@ yarn install
 CI=true yarn test
 ```
 
-You'll see 3 suites pass and `mergeSort.spec.js` fail. Merge sort is a stub left for you to write (see [What it is](#what-it-is)).
+You'll see all 4 suites pass.
 
 Plain `yarn test` stays open in watch mode and reruns when you save a file. Open `src/sort/bubbleSort.js` and read it next to `bubbleSort.spec.js`.
 
@@ -61,7 +61,7 @@ The `src/sort/` directory contains implementations of:
 | Bubble sort | `bubbleSort.js` | Complete |
 | Insertion sort | `insertionSort.js` | Complete |
 | Selection sort | `selectionSort.js` | Complete |
-| Merge sort | `mergeSort.js` | Stub, not yet implemented |
+| Merge sort | `mergeSort.js` | Complete |
 
 Each algorithm:
 
