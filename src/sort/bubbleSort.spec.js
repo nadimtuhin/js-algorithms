@@ -7,3 +7,20 @@ test('bubbleSort should sort an unordered array', () => {
 
     expect(result).toEqual(expectedResult);
 });
+
+test('bubbleSort should handle empty and one element arrays', () => {
+    expect(bubbleSort([])).toEqual([]);
+    expect(bubbleSort([1])).toEqual([1]);
+});
+
+test('bubbleSort should sort duplicates, negatives and reversed input', () => {
+    expect(bubbleSort([2, -1, 2, 0, -1])).toEqual([-1, -1, 0, 2, 2]);
+    expect(bubbleSort([5, 4, 3, 2, 1])).toEqual([1, 2, 3, 4, 5]);
+});
+
+test('bubbleSort should not mutate the input', () => {
+    const collection = [5, 2, 3, 4, 1];
+    bubbleSort(collection);
+
+    expect(collection).toEqual([5, 2, 3, 4, 1]);
+});

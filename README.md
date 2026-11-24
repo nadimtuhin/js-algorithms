@@ -32,7 +32,7 @@ yarn install
 CI=true yarn test
 ```
 
-You'll see 3 suites pass and `mergeSort.spec.js` fail. Merge sort is a stub left for you to write (see [What it is](#what-it-is)).
+You'll see all 4 suites pass.
 
 Plain `yarn test` stays open in watch mode and reruns when you save a file. Open `src/sort/bubbleSort.js` and read it next to `bubbleSort.spec.js`.
 
@@ -61,7 +61,7 @@ The `src/sort/` directory contains implementations of:
 | Bubble sort | `bubbleSort.js` | Complete |
 | Insertion sort | `insertionSort.js` | Complete |
 | Selection sort | `selectionSort.js` | Complete |
-| Merge sort | `mergeSort.js` | Stub, not yet implemented |
+| Merge sort | `mergeSort.js` | Complete |
 
 Each algorithm:
 
@@ -156,7 +156,7 @@ js-algorithms/
 
 ## CI
 
-GitHub Actions workflow at `.github/workflows/ci.yml` runs on push and pull request to `main`/`master`. It installs dependencies and runs `npm test`.
+GitHub Actions workflow at `.github/workflows/ci.yml` runs on push and pull request to `main`/`master`. It installs dependencies with Yarn, then runs `yarn lint` and `yarn test`; either failing fails the build.
 
 ## Contributing
 
