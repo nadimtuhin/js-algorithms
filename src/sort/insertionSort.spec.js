@@ -7,3 +7,18 @@ test('insertionSort should sort an unordered array', () => {
 
     expect(result).toEqual(expectedResult);
 });
+
+test('insertionSort should make one comparison per element on sorted input', () => {
+    let reads = 0;
+    const collection = Array.from({ length: 100 }, (_, value) => ({
+        valueOf() {
+            reads++;
+            return value;
+        },
+    }));
+
+    insertionSort(collection);
+
+    // each `<` comparison reads valueOf on both sides
+    expect(reads).toBe(2 * (collection.length - 1));
+});
