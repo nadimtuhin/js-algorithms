@@ -156,7 +156,7 @@ js-algorithms/
 
 ## CI
 
-GitHub Actions workflow at `.github/workflows/ci.yml` runs on push and pull request to `main`/`master`. It installs dependencies and runs `npm test`.
+GitHub Actions workflow at `.github/workflows/ci.yml` runs on push and pull request to `main`/`master`. It installs dependencies with Yarn, then runs `yarn lint` and `yarn test`; either failing fails the build.
 
 ## Contributing
 
